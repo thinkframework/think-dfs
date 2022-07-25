@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>io.github.thinkframework</groupId>
+        <artifactId>think-dfs</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.thinkframework</groupId>
+    <artifactId>think-dfs-data-node</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+	<name>think-dfs-data-node</name>
+	<url>http://maven.apache.org</url>
+
+    <description>基于Freemarker的代码生成工具</description>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <scm>
+    <connection>https://github.com/think-projects/think-generator.git</connection>
+    <developerConnection>https://github.com/think-projects/think-generator.git</developerConnection>
+    <url>https://github.com/think-projects/think-generator</url>
+    </scm>
+    <developers>
+        <developer>
+            <id>lixiaobin</id>
+            <name>lixiaobin</name>
+            <email>hdhxby@qq.com</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <!-- Build properties -->
+        <maven.version>3.0.0</maven.version>
+        <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <spring-boot-dependencies.version>2.2.13.RELEASE</spring-boot-dependencies.version>
+
+        <sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
+    </properties>
+
+    <dependencies>
+        <!-- 一方库 -->
+        <dependency>
+            <groupId>io.github.thinkframework</groupId>
+            <artifactId>think-dfs-rpc</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- 三方库 -->
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Nexus Release Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+</project>
