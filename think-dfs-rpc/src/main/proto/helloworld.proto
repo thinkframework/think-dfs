@@ -14,24 +14,31 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "io.thinkframework.examples.helloworld";
+option java_package = "io.thinkframework.dfs.rpc";
 option java_outer_classname = "HelloWorldProto";
 option objc_class_prefix = "HLW";
 
-package helloworld;
+package rpc;
 
 // The greeting service definition.
-service Greeter {
+service ThinkServiceRegistry {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc register (Registration) returns (Registration) {}
+  rpc deregister (Registration) returns (Registration) {}
+  rpc setStatus (Registration) returns (Registration) {}
+}
+// The greeting service definition.
+service ThinkFileSystem {
+  // Sends a greeting
+  rpc mkdir (File) returns (File) {}
 }
 
 // The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
+message Registration {
+  string ip = 1;
+  string name = 2;
 }
 
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
+message File {
+  string path = 1;
 }
