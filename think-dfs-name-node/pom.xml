@@ -9,9 +9,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.thinkframework</groupId>
-    <artifactId>think-dfs-name-node</artifactId>
+    <artifactId>think-dfs-name-nameNode</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-	<name>think-dfs-name-node</name>
+	<name>think-dfs-name-nameNode</name>
 	<url>http://maven.apache.org</url>
 
     <description>基于Freemarker的代码生成工具</description>

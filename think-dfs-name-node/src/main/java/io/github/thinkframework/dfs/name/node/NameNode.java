@@ -1,4 +1,4 @@
-package io.github.thinkframework.dfs;
+package io.github.thinkframework.dfs.name.node;
 
 import java.io.File;
 import java.util.*;
@@ -8,23 +8,25 @@ import java.util.stream.Collectors;
  * 文件目录树
  * @author lixiaobin
  */
-public class Node {
+public class NameNode {
     private String name;
 
-    private Node parent;
-    private Set<Node> children;
+    private NameNode parent;
+    private Set<NameNode> children = new HashSet<>();
 
-    public Node() {
+    public NameNode(String name) {
+        this.name = name;
     }
 
-    public Node(String name,Node parent) {
+    public NameNode(String name, NameNode parent) {
         this.name = name;
         this.parent = parent;
         parent.children.add(this);
     }
 
-    public Node(String name, Set<Node> children) {
+    public NameNode(String name, NameNode parent , Set<NameNode> children) {
         this.name = name;
+        this.parent = parent;
         this.children = children;
     }
 
@@ -36,15 +38,19 @@ public class Node {
         this.name = name;
     }
 
-    public Set<Node> getChildren() {
+    public NameNode getParent() {
+        return parent;
+    }
+
+    public Set<NameNode> getChildren() {
         return children;
     }
 
-    public void setChildren(Set<Node> children) {
+    public void setChildren(Set<NameNode> children) {
         this.children = children;
     }
 
-    public Optional<Node> find(String name){
+    public Optional<NameNode> find(String name){
         return children.stream().filter(child -> child.name.equals(name))
                 .findFirst();
     }
@@ -53,8 +59,8 @@ public class Node {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Node node = (Node) o;
-        return Objects.equals(name, node.name);
+        NameNode nameNode = (NameNode) o;
+        return Objects.equals(name, nameNode.name);
     }
 
     @Override
@@ -64,18 +70,19 @@ public class Node {
 
     @Override
     public String toString() {
-        return r(this)
-                .stream()
-                .collect(Collectors.joining(File.separator));
+//        return recursion(this)
+//                .stream()
+//                .collect(Collectors.joining(File.separator));
+        return name;
     }
 
-    public List<String> r(Node parent){
+    public List<String> recursion(NameNode node){
         List<String> list = new ArrayList();
-        if(parent != null) {
-            list.addAll(r(parent));
+        if(node.parent != null) {
+            list.addAll(recursion(node.parent));
         }
-        if(name != null) {
-            list.add(name);
+        if(node.name != null) {
+            list.add(node.name);
         }
         return list;
     }

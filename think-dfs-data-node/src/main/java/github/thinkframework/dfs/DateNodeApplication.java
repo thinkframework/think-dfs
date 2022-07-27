@@ -1,19 +1,14 @@
 package github.thinkframework.dfs;
 
+import github.thinkframework.dfs.data.node.server.DataNodeServer;
 import io.github.thinkframework.dfs.ThinkServiceRegistry;
-import io.grpc.ServerBuilder;
 
 import java.io.IOException;
 
 public class DateNodeApplication {
-    public static void main(String[] args) throws IOException {
-
-        ServerBuilder.forPort(9001)
-                .addService(new ThinkServiceRegistry())
-                .build()
-                .start();
-        while (true){
-            Thread.onSpinWait();
-        }
+    public static void main(String[] args) throws IOException, InterruptedException {
+        DataNodeServer dataNodeServer = new DataNodeServer();
+        dataNodeServer.start();
+        dataNodeServer.awaitTermination();
     }
 }

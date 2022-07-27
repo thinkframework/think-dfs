@@ -35,8 +35,8 @@
     </developers>
     <modules>
         <module>think-dfs-rpc</module>
-        <module>think-dfs-name-node</module>
-        <module>think-dfs-data-node</module>
+        <module>think-dfs-name-nameNode</module>
+        <module>think-dfs-data-nameNode</module>
         <module>think-dfs-client</module>
     </modules>
     <properties>
