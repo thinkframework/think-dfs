@@ -1,8 +1,9 @@
-package github.thinkframework.dfs;
+package io.github.thinkframework.dfs;
 
+
+import io.github.thinkframework.dfs.rpc.Registration;
+import io.github.thinkframework.dfs.rpc.ThinkServiceRegistryGrpc;
 import io.grpc.stub.StreamObserver;
-import io.thinkframework.dfs.rpc.Registration;
-import io.thinkframework.dfs.rpc.ThinkServiceRegistryGrpc;
 
 public class ThinkServiceRegistry extends ThinkServiceRegistryGrpc.ThinkServiceRegistryImplBase {
     @Override

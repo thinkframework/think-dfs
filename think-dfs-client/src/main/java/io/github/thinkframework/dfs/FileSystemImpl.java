@@ -1,8 +1,8 @@
-package github.thinkframework.dfs;
+package io.github.thinkframework.dfs;
 
+import io.github.thinkframework.dfs.rpc.File;
+import io.github.thinkframework.dfs.rpc.ThinkFileSystemGrpc;
 import io.grpc.ManagedChannelBuilder;
-import io.thinkframework.dfs.rpc.File;
-import io.thinkframework.dfs.rpc.ThinkFileSystemGrpc;
 
 public class FileSystemImpl {
     ThinkFileSystemGrpc.ThinkFileSystemBlockingStub stub;

@@ -14,7 +14,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "io.thinkframework.dfs.rpc";
+option java_package = "io.github.thinkframework.dfs.rpc";
 option java_outer_classname = "HelloWorldProto";
 option objc_class_prefix = "HLW";
 

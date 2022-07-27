@@ -1,8 +1,8 @@
 package github.thinkframework.dfs;
 
+import io.github.thinkframework.dfs.rpc.Registration;
+import io.github.thinkframework.dfs.rpc.ThinkServiceRegistryGrpc;
 import io.grpc.ManagedChannelBuilder;
-import io.thinkframework.dfs.rpc.Registration;
-import io.thinkframework.dfs.rpc.ThinkServiceRegistryGrpc;
 
 public class ServiceRegister {
 

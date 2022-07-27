@@ -1,5 +1,6 @@
 package github.thinkframework.dfs;
 
+import io.github.thinkframework.dfs.FileSystemImpl;
 import io.thinkframework.dfs.rpc.ThinkFileSystemGrpc;
 import org.junit.Test;
 

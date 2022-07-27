@@ -1,8 +1,8 @@
 package github.thinkframework.dfs;
 
+import io.github.thinkframework.dfs.rpc.File;
+import io.github.thinkframework.dfs.rpc.ThinkFileSystemGrpc;
 import io.grpc.stub.StreamObserver;
-import io.thinkframework.dfs.rpc.File;
-import io.thinkframework.dfs.rpc.ThinkFileSystemGrpc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
