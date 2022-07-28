@@ -35,9 +35,13 @@ public class ThinkFileLogManager {
      * 必须加锁
      * @param node
      */
-    public  void write(NameNode node) throws InterruptedException {
+    public  void write(NameNode node) {
         synchronized(this) {
-            waitSyncSchedule();
+            try {
+                waitSyncSchedule();
+            } catch (InterruptedException e) {
+                logger.error("waitSyncSchedule",e);
+            }
             long txId = txIdSeq++;
             threadLocal.set(txId);
             logger.debug("{}", node.recursion(node).stream().collect(Collectors.joining(File.separator)));

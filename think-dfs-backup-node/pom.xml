@@ -1,17 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>9</version>
+        <groupId>io.github.thinkframework</groupId>
+        <artifactId>think-dfs</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.thinkframework</groupId>
-    <artifactId>think-dfs</artifactId>
+    <artifactId>think-dfs-backup-node</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>think-dfs</name>
+	<name>think-dfs-backup-node</name>
 	<url>http://maven.apache.org</url>
 
     <description>基于Freemarker的代码生成工具</description>
@@ -33,13 +33,7 @@
             <email>hdhxby@qq.com</email>
         </developer>
     </developers>
-    <modules>
-        <module>think-dfs-rpc</module>
-        <module>think-dfs-name-node</module>
-        <module>think-dfs-data-node</module>
-        <module>think-dfs-backup-node</module>
-        <module>think-dfs-client</module>
-    </modules>
+
     <properties>
         <!-- Build properties -->
         <maven.version>3.0.0</maven.version>
@@ -54,17 +48,24 @@
         <sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <dependencies>
+        <!-- 一方库 -->
+        <dependency>
+            <groupId>io.github.thinkframework</groupId>
+            <artifactId>think-dfs-rpc</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- 三方库 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <repositories>
         <repository>
