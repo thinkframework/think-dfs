@@ -9,9 +9,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.thinkframework</groupId>
-    <artifactId>think-dfs-name-nameNode</artifactId>
+    <artifactId>think-dfs-name-node</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-	<name>think-dfs-name-nameNode</name>
+	<name>think-dfs-name-node</name>
 	<url>http://maven.apache.org</url>
 
     <description>基于Freemarker的代码生成工具</description>
@@ -51,10 +51,14 @@
         <!-- 一方库 -->
         <dependency>
             <groupId>io.github.thinkframework</groupId>
-            <artifactId>think-dfs-rpc</artifactId>
+            <artifactId>think-dfs-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!-- 三方库 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>

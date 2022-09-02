@@ -1,31 +1,36 @@
 package io.github.thinkframework.dfs.name.node.server;
 
-import io.github.thinkframework.dfs.name.node.service.NameNodeServiceRegistry;
-import io.github.thinkframework.dfs.name.node.service.NameNodeFileSystemService;
+import io.github.thinkframework.dfs.commons.config.Constants;
+import io.github.thinkframework.dfs.name.node.web.rest.EditLogsResource;
+import io.github.thinkframework.dfs.name.node.web.rest.FileSystemResource;
+import io.github.thinkframework.dfs.name.node.web.rest.ServiceRegistryResources;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
 import java.io.IOException;
 
+/**
+ *
+ */
 public class NameNodeServer {
-
-    /**
-     * 监听端口
-     */
-    public static final int PORT = 9001;
 
     private Server server;
 
-    private NameNodeServiceRegistry nameNodeServiceRegistry;
-    private NameNodeFileSystemService nameNodeFileSystemService;
+    private ServiceRegistryResources serviceRegistryResources;
+
+    private EditLogsResource editLogsResource;
+
+    private FileSystemResource fileSystemResource;
 
     public NameNodeServer() {
     }
 
     public void start() throws IOException {
-        server = ServerBuilder.forPort(PORT)
-                .addService(nameNodeServiceRegistry)
-                .addService(nameNodeFileSystemService)
+        server = ServerBuilder
+                .forPort(Constants.NAME_NODE_PORT)
+                .addService(serviceRegistryResources)
+                .addService(editLogsResource)
+                .addService(fileSystemResource)
                 .build();
         server.start();
     }
@@ -39,19 +44,27 @@ public class NameNodeServer {
         server.shutdown();
     }
 
-    public NameNodeServiceRegistry getNameNodeServiceRegistry() {
-        return nameNodeServiceRegistry;
+    public ServiceRegistryResources getNameNodeServiceRegistry() {
+        return serviceRegistryResources;
     }
 
-    public void setNameNodeServiceRegistry(NameNodeServiceRegistry nameNodeServiceRegistry) {
-        this.nameNodeServiceRegistry = nameNodeServiceRegistry;
+    public void setNameNodeServiceRegistry(ServiceRegistryResources serviceRegistryResources) {
+        this.serviceRegistryResources = serviceRegistryResources;
     }
 
-    public NameNodeFileSystemService getNameNodeFileSystemService() {
-        return nameNodeFileSystemService;
+    public EditLogsResource getFileLogsResources() {
+        return editLogsResource;
     }
 
-    public void setNameNodeFileSystemService(NameNodeFileSystemService nameNodeFileSystemService) {
-        this.nameNodeFileSystemService = nameNodeFileSystemService;
+    public void setFileLogsResources(EditLogsResource editLogsResource) {
+        this.editLogsResource = editLogsResource;
+    }
+
+    public FileSystemResource getNameNodeFileSystemService() {
+        return fileSystemResource;
+    }
+
+    public void setNameNodeFileSystemService(FileSystemResource fileSystemResource) {
+        this.fileSystemResource = fileSystemResource;
     }
 }

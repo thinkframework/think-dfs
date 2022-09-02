@@ -20,25 +20,52 @@ option objc_class_prefix = "HLW";
 
 package rpc;
 
-// The greeting service definition.
-service ThinkServiceRegistry {
-  // Sends a greeting
+// 服务注册
+message Registration {
+  string ip = 1;
+  string name = 2;
+  string host = 3;
+  string status = 4;
+}
+
+// 服务注册
+service NameNodeServiceRegistry {
+  // 注册
   rpc register (Registration) returns (Registration) {}
+  // 注销
   rpc deregister (Registration) returns (Registration) {}
+  // 心跳
   rpc setStatus (Registration) returns (Registration) {}
 }
+
+message File {
+  string path = 1;
+}
+
 // The greeting service definition.
 service ThinkFileSystem {
   // Sends a greeting
   rpc mkdir (File) returns (File) {}
 }
 
-// The request message containing the user's name.
-message Registration {
-  string ip = 1;
-  string name = 2;
+message Logs {
+  int64 id = 1;
+  string body = 2;
 }
 
-message File {
-  string path = 1;
+// 日志
+service EditLogsResource {
+  rpc get (Logs) returns (Logs) {}
+  rpc set (Logs) returns (Logs) {}
 }
+
+message FsImages {
+  int64 id = 1;
+  string body = 2;
+}
+// 日志镜像
+service FsImagesResource {
+  rpc checkpoint (FsImages) returns (FsImages) {}
+  rpc sync (FsImages) returns (FsImages) {}
+}
+

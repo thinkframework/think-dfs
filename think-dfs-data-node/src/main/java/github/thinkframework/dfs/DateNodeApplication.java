@@ -1,13 +1,12 @@
 package github.thinkframework.dfs;
 
-import github.thinkframework.dfs.data.node.server.DataNodeServer;
+import github.thinkframework.dfs.data.node.server.DataNodeSocketChannelServer;
 
 import java.io.IOException;
 
 public class DateNodeApplication {
     public static void main(String[] args) throws IOException, InterruptedException {
-        DataNodeServer dataNodeServer = new DataNodeServer();
-        dataNodeServer.start();
-        dataNodeServer.awaitTermination();
+        DataNodeSocketChannelServer server =new DataNodeSocketChannelServer();
+        server.start();
     }
 }

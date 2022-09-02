@@ -9,9 +9,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.thinkframework</groupId>
-    <artifactId>think-dfs-data-nameNode</artifactId>
+    <artifactId>think-dfs-data-node</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-	<name>think-dfs-data-nameNode</name>
+	<name>think-dfs-data-node</name>
 	<url>http://maven.apache.org</url>
 
     <description>基于Freemarker的代码生成工具</description>
@@ -52,10 +52,14 @@
         <!-- 一方库 -->
         <dependency>
             <groupId>io.github.thinkframework</groupId>
-            <artifactId>think-dfs-rpc</artifactId>
+            <artifactId>think-dfs-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!-- 三方库 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -66,31 +70,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
-        </snapshotRepository>
-        <repository>
-            <id>sonatype-nexus-staging</id>
-            <name>Nexus Release Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 </project>

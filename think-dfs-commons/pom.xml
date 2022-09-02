@@ -9,9 +9,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.thinkframework</groupId>
-    <artifactId>think-dfs-backup-node</artifactId>
+    <artifactId>think-dfs-commons</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-	<name>think-dfs-backup-node</name>
+	<name>think-dfs-commons</name>
 	<url>http://maven.apache.org</url>
 
     <description>基于Freemarker的代码生成工具</description>
@@ -52,7 +52,7 @@
         <!-- 一方库 -->
         <dependency>
             <groupId>io.github.thinkframework</groupId>
-            <artifactId>think-dfs-commons</artifactId>
+            <artifactId>think-dfs-rpc</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!-- 三方库 -->

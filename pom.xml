@@ -35,6 +35,7 @@
     </developers>
     <modules>
         <module>think-dfs-rpc</module>
+        <module>think-dfs-commons</module>
         <module>think-dfs-name-node</module>
         <module>think-dfs-data-node</module>
         <module>think-dfs-backup-node</module>
