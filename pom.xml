@@ -1,11 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
         <version>9</version>
+        <relativePath/>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.thinkframework</groupId>
     <artifactId>think-dfs</artifactId>
@@ -34,23 +36,26 @@
         </developer>
     </developers>
     <modules>
+        <module>think-dfs-dependencies</module>
         <module>think-dfs-rpc</module>
         <module>think-dfs-commons</module>
         <module>think-dfs-name-node</module>
         <module>think-dfs-data-node</module>
         <module>think-dfs-backup-node</module>
         <module>think-dfs-client</module>
+        <module>think-dfs-example</module>
     </modules>
     <properties>
         <!-- Build properties -->
         <maven.version>3.0.0</maven.version>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <spring-boot-dependencies.version>2.2.13.RELEASE</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>2.3.11.RELEASE</spring-boot-dependencies.version>
+<!--        <spring-boot-dependencies.version>2.6.14</spring-boot-dependencies.version>-->
 
         <sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
     </properties>
