@@ -1,4 +1,4 @@
-package github.thinkframework.dfs;
+package io.github.thinkframework.dfs;
 
 import github.thinkframework.dfs.data.node.server.DataNodeSocketChannelServer;
 

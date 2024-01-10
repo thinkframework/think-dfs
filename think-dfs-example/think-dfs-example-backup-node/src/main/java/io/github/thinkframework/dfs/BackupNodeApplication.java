@@ -1,4 +1,4 @@
-package io.github.thinkframework.dfs.backup.node;
+package io.github.thinkframework.dfs;
 
 import io.github.thinkframework.dfs.backup.node.config.BackupNodeConfiguration;
 import io.github.thinkframework.dfs.backup.node.management.FSImageSocketChannel;

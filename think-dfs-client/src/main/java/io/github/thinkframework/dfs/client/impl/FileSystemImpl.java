@@ -1,5 +1,7 @@
-package io.github.thinkframework.dfs.client;
+package io.github.thinkframework.dfs.client.impl;
 
+import io.github.thinkframework.dfs.client.DataNodeSocketChannel;
+import io.github.thinkframework.dfs.client.FileSystem;
 import io.github.thinkframework.dfs.commons.discovery.DiscoveryClient;
 import io.github.thinkframework.dfs.commons.discovery.ServiceInstance;
 import io.github.thinkframework.dfs.rpc.ThinkFileSystemGrpc;
@@ -9,11 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.attribute.FileAttribute;
 import java.util.List;
-import java.util.UUID;
 
 public class FileSystemImpl implements FileSystem {
     private static final Logger logger = LoggerFactory.getLogger(FileSystemImpl.class);

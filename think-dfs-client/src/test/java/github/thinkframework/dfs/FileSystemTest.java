@@ -1,7 +1,7 @@
 package github.thinkframework.dfs;
 
 import io.github.thinkframework.dfs.client.FileSystem;
-import io.github.thinkframework.dfs.client.FileSystemImpl;
+import io.github.thinkframework.dfs.client.impl.FileSystemImpl;
 import io.github.thinkframework.dfs.commons.discovery.DiscoveryClient;
 import org.junit.After;
 import org.junit.Before;

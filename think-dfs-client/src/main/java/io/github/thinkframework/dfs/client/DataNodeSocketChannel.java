@@ -100,8 +100,11 @@ public class DataNodeSocketChannel implements Runnable{
             if(socketChannel.isConnectionPending()){
                 while(!socketChannel.finishConnect()){
                 }
-                logger.info("链接成功");
             }
+            logger.debug("链接成功");
+            // 取消链接事件的关注
+            selectionKey.interestOps(selectionKey.interestOps() &(~SelectionKey.OP_CONNECT));
+            // 关注写事件
             socketChannel.register(selector, SelectionKey.OP_WRITE);
         }
 
